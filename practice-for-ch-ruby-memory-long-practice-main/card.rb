@@ -4,6 +4,7 @@
 class Card 
 
     attr_reader :face_value, :face
+    attr_writer :face
 
     def initialize(face_value, face = false)
 
@@ -30,11 +31,11 @@ class Card
         end
     end
 
-    def ==(card)
+    # def ==(card)
 
-        @face_value == card.face_value && @face == card.face
+    #     @face_value == card.face_value && @face == card.face
 
-    end
+    # end
 
 
 

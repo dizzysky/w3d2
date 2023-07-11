@@ -15,8 +15,8 @@ class Board
             row = rand(0...@grid.length)
             col = rand(0...@grid.length)
 
-            if grid[row][col] == nil 
-                grid[row][col] = Card.new(alphabet.pop)
+            if @grid[row][col] == nil 
+                @grid[row][col] = Card.new(alphabet.pop)
                 count +=1
         
             end
