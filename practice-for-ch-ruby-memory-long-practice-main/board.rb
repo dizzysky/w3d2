@@ -57,7 +57,7 @@ class Board
         row, col = pos
 
         if @grid[row][col].face
-            return
+            return @grid[row][col].face_value
         else
             @grid[row][col].face = true
             return @grid[row][col].face_value

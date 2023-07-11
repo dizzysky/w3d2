@@ -57,6 +57,7 @@ class Game
             end
             @prev_guess = nil
         end
+        @board.render
     end
     
 end
