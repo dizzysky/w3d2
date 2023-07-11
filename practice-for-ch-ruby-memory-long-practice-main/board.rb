@@ -22,4 +22,53 @@ class Board
             end
         end
     end
+
+
+
+    def render
+        @grid.each do |row|
+
+            temp = []
+
+            row.each do |card|
+                if card.face 
+                    temp << card.face_value 
+                else
+                    temp << ' '
+                end
+            end
+            puts temp.join(' ')
+        end
+    end
+
+
+    def won?
+
+        @grid.all? do |row| 
+    
+            row.all? do |card| 
+                card.face
+            end
+        end
+    end
+
+
+    def reveal(pos)
+        row, col = pos
+
+        if @grid[row][col].face
+            return
+        else
+            @grid[row][col].face = true
+            self.reveal
+            return @grid[row][col].face_value
+        end
+    end
+
+    
+
+
+
+                    
+
 end

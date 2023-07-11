@@ -3,7 +3,9 @@
 
 class Card 
 
-    def initialize(face_value, face)
+    attr_reader :face_value, :face
+
+    def initialize(face_value, face = false)
 
         @face_value = face_value
 
@@ -21,10 +23,10 @@ class Card
     end
 
     def to_s
-        if face 
+        if @face 
             @face_value.to_s 
         else
-            raise 'card is not face up'
+            ""
         end
     end
 
