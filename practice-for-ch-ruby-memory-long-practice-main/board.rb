@@ -4,7 +4,7 @@ class Board
         @grid = Array.new(size) {Array.new(size)}
     end
 
-    def populate()
+    def populate
         alphabet ="abcdefghijklmnopqrstuvwxyz"
         alphabet = alphabet.split("")
         alphabet = alphabet.shuffle
@@ -60,15 +60,18 @@ class Board
             return
         else
             @grid[row][col].face = true
-            self.reveal
             return @grid[row][col].face_value
         end
+    end 
+    
+    def [](pos)
+        row,col =pos
+        @grid[row][col]
     end
 
-    
-
-
-
-                    
+    def []=(pos,val)
+        row,col =pos
+        @grid[row][col] = val
+    end
 
 end
